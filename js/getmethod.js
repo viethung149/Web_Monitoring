@@ -70,6 +70,7 @@ console.log(typeof obj.employees[0].name) ; // John
 console.log(obj.employees[1].name) ; // Anna
 }
 function get_cells_infor(){
+	console.log("HTTP request for cells information")
 	// battery_cells
 	var json_infor = httpGet(URL_battery_cell);
 	var objInfor = JSON.parse(json_infor);
@@ -93,6 +94,7 @@ function get_cells_infor(){
 	// timer = setInterval(update_data_cells_infor, 5000);
 }
 function get_packages_infor(){
+	console.log("HTTP request for packages information")
 	// get packages json infor
 	var json_package = httpGet(URL_battery_package);
 	var objPackage = JSON.parse(json_package);
@@ -118,6 +120,7 @@ function get_packages_infor(){
 }
 function get_pheripheral_infor(){
 	// get pheripheral json 
+	console.log("HTTP request for pheripheral information")
 	var json_pheripheral = httpGet(URL_pheripheral);
 	var objPheripheral= JSON.parse(json_pheripheral);
 	var array = Object.values(objPheripheral.PackagesInformation)
@@ -205,7 +208,8 @@ function sleep(milliseconds) {
 function turn_off_request(){
 	clearInterval(timer);
 }
-function data_battery_infor(){
+function render_battery_infor(){
+	console.log("render cells information")
 	document.getElementById("Bat_1_vol").innerHTML = cell_column_voltage[0].toFixed(3)
 	document.getElementById("Bat_1_tem").innerHTML = cell_column_temperature[0].toFixed(3)
 	document.getElementById("Bat_1_bla").innerHTML = cell_column_Balance[0]
@@ -254,29 +258,31 @@ function data_battery_infor(){
 	document.getElementById("Bat_8_wvol").innerHTML = cell_column_warning_voltage[7]
 	document.getElementById("Bat_8_wtem").innerHTML = cell_column_warning_temperature[7]
 }
-function data_packages_infor(){
+function render_packages_infor(){
+	console.log("render packages information")
 	document.getElementById("pac1_capacity").innerHTML = package_column_voltage[0].toFixed(3)
 	document.getElementById("pac1_temperature").innerHTML = package_column_temperature[0].toFixed(3)
-	document.getElementById("pac1_curent").innerHTML =  package_column_current[0]
+	document.getElementById("pac1_curent").innerHTML =  package_column_current[0].toFixed(3)
 	document.getElementById("pac1_balance").innerHTML = package_column_warning[0]
 	document.getElementById("pac1_connect").innerHTML = package_column_connection[0]
 	document.getElementById("pac1_warning").innerHTML = package_column_warning[0]
 
 	document.getElementById("pac2_capacity").innerHTML = package_column_voltage[1].toFixed(3)
 	document.getElementById("pac2_temperature").innerHTML = package_column_temperature[1].toFixed(3)
-	document.getElementById("pac2_curent").innerHTML =  package_column_current[1]
+	document.getElementById("pac2_curent").innerHTML =  package_column_current[1].toFixed(3)
 	document.getElementById("pac2_balance").innerHTML = package_column_warning[1]
 	document.getElementById("pac2_connect").innerHTML = package_column_connection[1]
 	document.getElementById("pac2_warning").innerHTML = package_column_warning[1]
 
 	document.getElementById("pac3_capacity").innerHTML = package_column_voltage[2].toFixed(3)
 	document.getElementById("pac3_temperature").innerHTML = package_column_temperature[2].toFixed(3)
-	document.getElementById("pac3_curent").innerHTML =  package_column_current[2]
+	document.getElementById("pac3_curent").innerHTML =  package_column_current[2].toFixed(3)
 	document.getElementById("pac3_balance").innerHTML = package_column_warning[2]
 	document.getElementById("pac3_connect").innerHTML = package_column_connection[2]
 	document.getElementById("pac3_warning").innerHTML = package_column_warning[2]
 }
-function data_pheripheral_infor(){
+function render_pheripheral_infor(){
+	console.log("render pheripheral information")
 	document.getElementById("replay 1").innerHTML = pheripheral_column_status[RELAY1_PACKAGE1];
 	document.getElementById("replay 2").innerHTML =  pheripheral_column_status[RELAY2_PACKAGE2];
 	document.getElementById("replay 3").innerHTML = pheripheral_column_status[RELAY3_FAN1];
@@ -286,9 +292,20 @@ function update_table_battery_infor(){
 	get_cells_infor();
 	get_packages_infor();
 	get_pheripheral_infor();
+	render_battery_infor();
+	render_packages_infor();
+	render_pheripheral_infor();
+	//setInterval(update_table_battery_infor,5000);
+}
+function update_cells_table(){
+	get_cells_infor();
+	render_battery_infor();
+}
+function update_packages_table(){
+	get_packages_infor();
+	render_packages_infor();
+}
+function update_pheripheral_infor(){
 	get_pheripheral_infor();
-	data_battery_infor();
-	data_packages_infor();
-	data_pheripheral_infor();
-	setInterval(update_table_battery_infor,5000);
+	render_pheripheral_infor();
 }
