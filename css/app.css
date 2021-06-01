@@ -224,6 +224,7 @@ th {
 }
 
 .peripheral_th {
+    text-align: left;
     background-color: #8CC63F;
     color: white;
 }
@@ -236,9 +237,9 @@ th {
 }
 
 .funtion_body_package {
-    margin-left: 2%;
-    width: 60%;
-    height: 60%;
+    margin-left: 1%;
+    width: 80%;
+    height: 50%;
     border: 3px solid #8CC63F;
     border-radius: 10px;
 }
