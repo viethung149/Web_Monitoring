@@ -1,0 +1,291 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Leaflet -->
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+        integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
+        crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"
+        integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA=="
+        crossorigin=""></script>
+
+    <!-- Bootstrap CSS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="./css/bootstrap.min.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./source/fontawesome-free-5.15.3-web/css/all.css">
+
+</head>
+
+<body onload="update_table_battery_infor()">
+    <!-- background -->
+    <div class="main_background">
+        <!-- header -->
+        <div class="header"></div>
+        <!-- body -->
+        <div class="body">
+            <!-- body_menu -->
+            <div class="main_body_menu">
+                <!-- cGioi thieu -->
+                <div class="main_body_menu_au">
+                    <i class="fas fa-book-open"></i>
+                    <span> ABOUT</span>
+                </div>
+                <button class="tablinks" onclick="changeTable(event, 'topic')">Topic</button>
+                <!-- Chức năng -->
+                <div class="main_body_menu_ui">
+                    <i class="fas fa-atom"></i>
+                    <span> FUNCTION</span>
+                </div>
+                <button class="tablinks" onclick="changeTable(event, 'battery')" id="defaultOpen">Battery</button>
+                <button class="tablinks" onclick="changeTable(event, 'package')">Package</button>
+                <button class="tablinks" onclick="changeTable(event, 'peripheral')">Peripheral</button>
+                <button class="tablinks" onclick="changeTable(event, 'data')">Data</button>
+                <!-- Trợ giúp -->
+                <div class="main_body_menu_conduct">
+                    <i class="fas fa-question-circle"></i>
+                    <span> HELP</span>
+                </div>
+                <button class="tablinks" onclick="changeTable(event, 'conduct')">Conduct</button>
+            </div>
+            <!-- body-template -->
+            <!-- topic -->
+            <div id="topic" class="tabcontent">
+            </div>
+            <!-- Battery -->
+            <div id="battery" class="tabcontent">
+                <div class="battery_body">
+                    <div class="funtion_menu">
+                        <div class="funtion_menu_name">
+                            <span>CONTROL</span>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="package_1_but">Package 1</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="package_2_but">Package 2</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="fan_1_but">Fan 1</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="fan_2_but">Fan 2</button>
+                        </div>
+                    </div>
+                    <div class="funtion_body_battery">
+                        <table>
+                            <tr>
+                                <!-- colunm -->
+                                <th>Name battery</th>
+                                <th>Voltage</th>
+                                <th>Temperate</th>
+                                <th>Blance</th>
+                                <th>Warning Voltage</th>
+                                <th>Warning Temperate</th>
+                            </tr>
+                            <tr>
+                                <td>Battery 1</td>
+                                <td id="Bat_1_vol"></td>
+                                <td id="Bat_1_tem"></td>
+                                <td id="Bat_1_bla"></td>
+                                <td id="Bat_1_wvol"></td>
+                                <td id="Bat_1_wtem"></td>
+                            </tr>
+                            <tr>
+                                <td>Battery 2</td>
+                                <td id="Bat_2_vol"></td>
+                                <td id="Bat_2_tem"></td>
+                                <td id="Bat_2_bla"></td>
+                                <td id="Bat_2_wvol"></td>
+                                <td id="Bat_2_wtem"></td>
+                            </tr>
+                            <tr>
+                                <td>Battery 3</td>
+                                <td id="Bat_3_vol"></td>
+                                <td id="Bat_3_tem"></td>
+                                <td id="Bat_3_bla"></td>
+                                <td id="Bat_3_wvol"></td>
+                                <td id="Bat_3_wtem"></td>
+                            </tr>
+                            <tr>
+                                <td>Battery 4</td>
+                                <td id="Bat_4_vol"></td>
+                                <td id="Bat_4_tem"></td>
+                                <td id="Bat_4_bla"></td>
+                                <td id="Bat_4_wvol"></td>
+                                <td id="Bat_4_wtem"></td>
+                            </tr>
+                            <tr>
+                                <td>Battery 5</td>
+                                <td id="Bat_5_vol"></td>
+                                <td id="Bat_5_tem"></td>
+                                <td id="Bat_5_bla"></td>
+                                <td id="Bat_5_wvol"></td>
+                                <td id="Bat_5_wtem"></td>
+                            </tr>
+                            <tr>
+                                <td>Battery 6</td>
+                                <td id="Bat_6_vol"></td>
+                                <td id="Bat_6_tem"></td>
+                                <td id="Bat_6_bla"></td>
+                                <td id="Bat_6_wvol"></td>
+                                <td id="Bat_6_wtem"></td>
+                            </tr>
+                            <tr>
+                                <td>Battery 7</td>
+                                <td id="Bat_7_vol"></td>
+                                <td id="Bat_7_tem"></td>
+                                <td id="Bat_7_bla"></td>
+                                <td id="Bat_7_wvol"></td>
+                                <td id="Bat_7_wtem"></td>
+                            </tr>
+                            <tr>
+                                <td>Battery 8</td>
+                                <td id="Bat_8_vol"></td>
+                                <td id="Bat_8_tem"></td>
+                                <td id="Bat_8_bla"></td>
+                                <td id="Bat_8_wvol"></td>
+                                <td id="Bat_8_wtem"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Package -->
+            <div id="package" class="tabcontent">
+                <div class="package_body">
+                    <div class="funtion_menu">
+                        <div class="funtion_menu_name">
+                            <span>CONTROL</span>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="package_1_but">Package 1</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="package_2_but">Package 2</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="fan_1_but">Fan 1</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="fan_2_but">Fan 2</button>
+                        </div>
+                    </div>
+                    <div class="funtion_body_package">
+                        <table>
+                            <tr>
+                                <th>Name Package</th>
+                                <th>Capacity</th>
+                                <th>Temperature</th>
+                                <th>Curent</th>
+                                <th>Balance</th>
+                                <th>Connect</th>
+                                <th>Warning</th>
+                            </tr>
+                            <tr>
+                                <td>Package 1</td>
+                                <td id="pac1_capacity"></td>
+                                <td id="pac1_temperature"></td>
+                                <td id="pac1_curent"></td>
+                                <td id="pac1_balance"></td>
+                                <td id="pac1_connect"></td>
+                                <td id="pac1_warning"></td>
+                            </tr>
+                            <tr>
+                                <td>Package 2</td>
+                                <td id="pac2_capacity"></td>
+                                <td id="pac2_temperature"></td>
+                                <td id="pac2_curent"></td>
+                                <td id="pac2_balance"></td>
+                                <td id="pac2_connect"></td>
+                                <td id="pac2_warning"></td>
+                            </tr>
+                            <tr>
+                                <td>Package 3</td>
+                                <td id="pac3_capacity"></td>
+                                <td id="pac3_temperature"></td>
+                                <td id="pac3_curent"></td>
+                                <td id="pac3_balance"></td>
+                                <td id="pac3_connect"></td>
+                                <td id="pac3_warning"></td>
+                            </tr>
+
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Peripheral -->
+            <div id="peripheral" class="tabcontent">
+                <div class="peripheral_body">
+                    <div class="funtion_menu">
+                        <div class="funtion_menu_name">
+                            <span>CONTROL</span>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="package_1_but">Package 1</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="package_2_but">Package 2</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="fan_1_but">Fan 1</button>
+                        </div>
+                        <div class="control">
+                            <button class="control_but" id="fan_2_but">Fan 2</button>
+                        </div>
+                    </div>
+                    <div class="funtion_body_peripheral">
+                        <table>
+                            <tr>
+                                <th class="peripheral_th">Name Pheripheral</th>
+                                <th class="peripheral_th">Status</th>
+                            </tr>
+                            <tr>
+                                <td class="peripheral_td_name">Relay 1 - Package 1</td>
+                                <td class="peripheral_td_value" id="replay 1"></td>
+                            </tr>
+                            <tr>
+                                <td class="peripheral_td_name">Relay 2 - Package 2</td>
+                                <td class="peripheral_td_value" id="replay 2"></td>
+                            </tr>
+                            <tr>
+                                <td class="peripheral_td_name">Relay 3 - Fan 1</td>
+                                <td class="peripheral_td_value" id="replay 3"></td>
+                            </tr>
+                            <tr>
+                                <td class="peripheral_td_name">Relay 4 - Fan 2</td>
+                                <td class="peripheral_td_value" id="replay 4"></td>
+                            </tr>
+                        </table>
+                    </div>
+                </div>
+            </div>
+            <!-- Data -->
+            <div id="data" class="tabcontent">
+
+            </div>
+            <!-- Conduct -->
+            <div id="conduct" class="tabcontent">
+
+            </div>
+
+        </div>
+        <div class="information"></div>
+    </div>
+
+    </div>
+    <!-- header -->
+    </div>
+    <script src="./js/jquery-3.3.1.slim.min.js"></script>
+    <script src="./js/tablink.js"></script>
+    <script src="./js/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="./js/bootstrap.min.js"></script>
+    <script src="./js/getmethod.js"></script>
+</body>
