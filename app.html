@@ -19,7 +19,10 @@
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
-    <link rel="stylesheet" href="./css/app.css">
+    <!-- PC -->
+    <link rel="stylesheet" medida = "(min-width:1024px and min_height:650px)"  href="./css/app.css">
+    <!-- Mobile -->
+    <link rel="stylesheet" medida = "(max-width:740px))"  href="./css/mobile.css">
     <link rel="stylesheet" href="./source/fontawesome-free-5.15.3-web/css/all.css">
 
 </head>
@@ -62,23 +65,7 @@
             <!-- Battery -->
             <div id="battery" class="tabcontent">
                 <div class="battery_body">
-                    <div class="funtion_menu">
-                        <div class="funtion_menu_name">
-                            <span>CONTROL</span>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="package_1_but">Package 1</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="package_2_but">Package 2</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="fan_1_but">Fan 1</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="fan_2_but">Fan 2</button>
-                        </div>
-                    </div>
+
                     <div class="funtion_body_battery">
                         <table>
                             <tr>
@@ -86,73 +73,90 @@
                                 <th>Name battery</th>
                                 <th>Voltage</th>
                                 <th>Temperature</th>
-                                <th>Blance</th>
+                                <!-- <th>Blance</th> -->
                                 <th>Warning Voltage</th>
                                 <th>Warning Temperature</th>
+                                <th>Time</th>
                             </tr>
                             <tr>
                                 <td>Battery 1</td>
                                 <td id="Bat_1_vol"></td>
                                 <td id="Bat_1_tem"></td>
-                                <td id="Bat_1_bla"></td>
+                                <!-- <td id="Bat_1_bla"></td> -->
                                 <td id="Bat_1_wvol"></td>
                                 <td id="Bat_1_wtem"></td>
+                                <td id="Bat_1_time"></td>
+
                             </tr>
                             <tr>
                                 <td>Battery 2</td>
                                 <td id="Bat_2_vol"></td>
                                 <td id="Bat_2_tem"></td>
-                                <td id="Bat_2_bla"></td>
+                                <!-- <td id="Bat_2_bla"></td> -->
                                 <td id="Bat_2_wvol"></td>
                                 <td id="Bat_2_wtem"></td>
+                                <td id="Bat_2_time"></td>
+
                             </tr>
                             <tr>
                                 <td>Battery 3</td>
                                 <td id="Bat_3_vol"></td>
                                 <td id="Bat_3_tem"></td>
-                                <td id="Bat_3_bla"></td>
+                                <!-- <td id="Bat_3_bla"></td> -->
                                 <td id="Bat_3_wvol"></td>
                                 <td id="Bat_3_wtem"></td>
+                                <td id="Bat_3_time"></td>
+
                             </tr>
                             <tr>
                                 <td>Battery 4</td>
                                 <td id="Bat_4_vol"></td>
                                 <td id="Bat_4_tem"></td>
-                                <td id="Bat_4_bla"></td>
+                                <!-- <td id="Bat_4_bla"></td> -->
                                 <td id="Bat_4_wvol"></td>
                                 <td id="Bat_4_wtem"></td>
+                                <td id="Bat_4_time"></td>
+
                             </tr>
                             <tr>
                                 <td>Battery 5</td>
                                 <td id="Bat_5_vol"></td>
                                 <td id="Bat_5_tem"></td>
-                                <td id="Bat_5_bla"></td>
+                                <!-- <td id="Bat_5_bla"></td> -->
                                 <td id="Bat_5_wvol"></td>
                                 <td id="Bat_5_wtem"></td>
+                                <td id="Bat_5_time"></td>
+
                             </tr>
                             <tr>
                                 <td>Battery 6</td>
                                 <td id="Bat_6_vol"></td>
                                 <td id="Bat_6_tem"></td>
-                                <td id="Bat_6_bla"></td>
+                                <!-- <td id="Bat_6_bla"></td> -->
                                 <td id="Bat_6_wvol"></td>
                                 <td id="Bat_6_wtem"></td>
+                                <td id="Bat_6_time"></td>
+
                             </tr>
                             <tr>
                                 <td>Battery 7</td>
                                 <td id="Bat_7_vol"></td>
                                 <td id="Bat_7_tem"></td>
-                                <td id="Bat_7_bla"></td>
+                                <!-- <td id="Bat_7_bla"></td> -->
                                 <td id="Bat_7_wvol"></td>
                                 <td id="Bat_7_wtem"></td>
+                                <td id="Bat_7_time"></td>
+                                
                             </tr>
                             <tr>
                                 <td>Battery 8</td>
                                 <td id="Bat_8_vol"></td>
                                 <td id="Bat_8_tem"></td>
-                                <td id="Bat_8_bla"></td>
+                                <!-- <td id="Bat_8_bla"></td> -->
                                 <td id="Bat_8_wvol"></td>
                                 <td id="Bat_8_wtem"></td>
+                                <td id="Bat_8_time"></td>
+
                             </tr>
                         </table>
                     </div>
@@ -161,23 +165,7 @@
             <!-- Package -->
             <div id="package" class="tabcontent">
                 <div class="package_body">
-                    <div class="funtion_menu">
-                        <div class="funtion_menu_name">
-                            <span>CONTROL</span>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="package_1_but">Package 1</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="package_2_but">Package 2</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="fan_1_but">Fan 1</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="fan_2_but">Fan 2</button>
-                        </div>
-                    </div>
+                
                     <div class="funtion_body_package">
                         <table>
                             <tr>
@@ -185,36 +173,42 @@
                                 <th>Capacity</th>
                                 <th>Temperature</th>
                                 <th>Curent</th>
-                                <th>Balance</th>
+                                <!-- <th>Balance</th> -->
                                 <th>Connect</th>
                                 <th>Warning</th>
+                                <th>Time</th>
+
                             </tr>
                             <tr>
                                 <td>Package 1</td>
                                 <td id="pac1_capacity"></td>
                                 <td id="pac1_temperature"></td>
                                 <td id="pac1_curent"></td>
-                                <td id="pac1_balance"></td>
+                                <!-- <td id="pac1_balance"></td> -->
                                 <td id="pac1_connect"></td>
                                 <td id="pac1_warning"></td>
+                                <td id="pac1_time"></td>
                             </tr>
                             <tr>
                                 <td>Package 2</td>
                                 <td id="pac2_capacity"></td>
                                 <td id="pac2_temperature"></td>
                                 <td id="pac2_curent"></td>
-                                <td id="pac2_balance"></td>
+                                <!-- <td id="pac2_balance"></td> -->
                                 <td id="pac2_connect"></td>
                                 <td id="pac2_warning"></td>
+                                <td id="pac2_time"></td>
+
                             </tr>
                             <tr>
                                 <td>Package 3</td>
                                 <td id="pac3_capacity"></td>
                                 <td id="pac3_temperature"></td>
                                 <td id="pac3_curent"></td>
-                                <td id="pac3_balance"></td>
+                                <!-- <td id="pac3_balance"></td> -->
                                 <td id="pac3_connect"></td>
                                 <td id="pac3_warning"></td>
+                                <td id="pac3_time"></td>
                             </tr>
 
                         </table>
@@ -224,44 +218,36 @@
             <!-- Peripheral -->
             <div id="peripheral" class="tabcontent">
                 <div class="peripheral_body">
-                    <div class="funtion_menu">
-                        <div class="funtion_menu_name">
-                            <span>CONTROL</span>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="package_1_but">Package 1</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="package_2_but">Package 2</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="fan_1_but">Fan 1</button>
-                        </div>
-                        <div class="control">
-                            <button class="control_but" id="fan_2_but">Fan 2</button>
-                        </div>
-                    </div>
+                    
                     <div class="funtion_body_peripheral">
                         <table>
                             <tr>
                                 <th class="peripheral_th">Name Pheripheral</th>
                                 <th class="peripheral_th">Status</th>
+                                <th>Time</th>
                             </tr>
                             <tr>
                                 <td class="peripheral_td_name">Relay 1 - Package 1</td>
                                 <td class="peripheral_td_value" id="replay 1"></td>
+                                <td id="relay1_time"></td>
                             </tr>
                             <tr>
                                 <td class="peripheral_td_name">Relay 2 - Package 2</td>
                                 <td class="peripheral_td_value" id="replay 2"></td>
+                                <td id="relay2_time"></td>
+
                             </tr>
                             <tr>
                                 <td class="peripheral_td_name">Relay 3 - Fan 1</td>
                                 <td class="peripheral_td_value" id="replay 3"></td>
+                                <td id="relay3_time"></td>
+
                             </tr>
                             <tr>
                                 <td class="peripheral_td_name">Relay 4 - Fan 2</td>
                                 <td class="peripheral_td_value" id="replay 4"></td>
+                                <td id="relay4_time"></td>
+
                             </tr>
                         </table>
                     </div>
@@ -269,7 +255,44 @@
             </div>
             <!-- Data -->
             <div id="data" class="tabcontent">
-
+                <canvas id="myChart" width="400" height="400"></canvas>
+<script>
+var ctx = document.getElementById('myChart').getContext('2d');
+var myChart = new Chart(ctx, {
+    type: 'bar',
+    data: {
+        labels: ['Red', 'Blue', 'Yellow', 'Green', 'Purple', 'Orange'],
+        datasets: [{
+            label: '# of Votes',
+            data: [12, 19, 3, 5, 2, 3],
+            backgroundColor: [
+                'rgba(255, 99, 132, 0.2)',
+                'rgba(54, 162, 235, 0.2)',
+                'rgba(255, 206, 86, 0.2)',
+                'rgba(75, 192, 192, 0.2)',
+                'rgba(153, 102, 255, 0.2)',
+                'rgba(255, 159, 64, 0.2)'
+            ],
+            borderColor: [
+                'rgba(255, 99, 132, 1)',
+                'rgba(54, 162, 235, 1)',
+                'rgba(255, 206, 86, 1)',
+                'rgba(75, 192, 192, 1)',
+                'rgba(153, 102, 255, 1)',
+                'rgba(255, 159, 64, 1)'
+            ],
+            borderWidth: 1
+        }]
+    },
+    options: {
+        scales: {
+            y: {
+                beginAtZero: true
+            }
+        }
+    }
+});
+</script>
             </div>
             <!-- Conduct -->
             <div id="conduct" class="tabcontent">
@@ -288,4 +311,5 @@
     <script src="./js/popper.js/1.14.7/umd/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
     <script src="./js/getmethod.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 </body>
