@@ -176,7 +176,7 @@ html {
 .funtion_body_battery {
     margin-top:-5.5%;
     margin-left: 2%;
-    width: 78%;
+    width: 95%;
     height: 100%;
     border: 3px solid #8CC63F;
     border-radius: 10px;
@@ -238,7 +238,7 @@ th {
 
 .funtion_body_package {
     margin-left: 1%;
-    width: 80%;
+    width: 95%;
     height: 50%;
     border: 3px solid #8CC63F;
     border-radius: 10px;
@@ -252,8 +252,8 @@ th {
 }
 
 .funtion_body_peripheral {
-    margin-left: 7%;
-    width: 60%;
+    margin-left: 5%;
+    width: 90%;
     height: 55%;
     border: 3px solid #8CC63F;
     border-radius: 10px;
