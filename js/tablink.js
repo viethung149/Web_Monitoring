@@ -16,20 +16,20 @@ function changeTable(evt, tableName) {
   // show element tableName
   document.getElementById(tableName).style.display = "block";
   if(tableName == "battery"){
-    update_cells_table()
-    timer_cells = setInterval(update_cells_table,5000);
+    update_cells_database()
+    timer_cells = setInterval(update_cells_database,5000);
     clearInterval(window.timer_packages)
     clearInterval(window.timer_pheripheral)
   }
   else if(tableName =="package"){
-    update_packages_table()
-    timer_packages = setInterval(update_packages_table,5000);
+    update_packages_database()
+    timer_packages = setInterval(update_packages_database,5000);
     clearInterval(window.timer_cells)
     clearInterval(window.timer_pheripheral)
   }
   else if(tableName == "peripheral"){
-    update_pheripheral_infor()
-    timer_pheripheral = setInterval(update_pheripheral_infor,5000);
+    update_peripheral_database()
+    timer_pheripheral = setInterval(update_peripheral_database,5000);
     clearInterval(window.timer_cells)
     clearInterval(window.timer_packages)
   }
