@@ -1,4 +1,6 @@
 var myChart;
+const URL_CELL_INFOR = "http://171.249.238.83:8000/api/InforCell/id/"
+const URL_PACKAGE_INFOR = "http://171.249.238.83:8000/api/InforPackage/id/"
 function httpGet(theUrl)
 	{
 	    var xmlHttp = new XMLHttpRequest();
@@ -20,9 +22,8 @@ function httpGet(theUrl)
             drawChart(data);
         }
         else{
-            console.log("No data");
+            alert("No data in this time");
         }
-        
 	    return xmlHttp.responseText;
 	}
 function getSubmid() {
@@ -43,10 +44,10 @@ function getSubmid() {
     var from_time = date + " " + hour_from + ":" + minute_from;
     var to_time = date + " " + hour_to + ":" + minute_to;
     if (cellInfor == "0" && packageInfor == "0") {
-        alert("choose select please");
+        alert("Please choose the object to monitor");
     }
     else if(isVoltage ==false && isTemperature ==false && isCurrent ==false){
-        alert("please tick at least one check box");
+        alert("Plear to value to monitor of the object");
     }
     else if (cellInfor != "0") {
         var URL =setURLCellInfor(cellInfor, isVoltage, isTemperature, from_time, to_time);
@@ -91,14 +92,12 @@ function changingPackageSelect() {
     }
 }
 function setURLCellInfor(id, isVoltage, isTemperature, from, to) {
-    var URL_CELL_INFOR = "http://192.168.1.8:8000/api/InforCell/id/"
     var result = URL_CELL_INFOR + id + "/isVoltage/" + isVoltage + "/isTemperature/" + isTemperature +
         "/from/" + from + "/to/" + to;
     console.log(result);
     return result;
 }
 function setURLPackageInfor(id, isVoltage, isTemperature, isCurrent, from, to) {
-    var URL_PACKAGE_INFOR = "http://192.168.1.8:8000/api/InforPackage/id/"
     var result = URL_PACKAGE_INFOR + id + "/isVoltage/" + isVoltage + "/isTemperature/" + isTemperature +
         "/isCurrent/" + isCurrent + "/from/" + from + "/to/" + to;
     console.log(result);
