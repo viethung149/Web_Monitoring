@@ -22,9 +22,8 @@ function httpGet(theUrl)
             drawChart(data);
         }
         else{
-            console.log("No data");
+            alert("No data in this time");
         }
-        
 	    return xmlHttp.responseText;
 	}
 function getSubmid() {
@@ -45,10 +44,10 @@ function getSubmid() {
     var from_time = date + " " + hour_from + ":" + minute_from;
     var to_time = date + " " + hour_to + ":" + minute_to;
     if (cellInfor == "0" && packageInfor == "0") {
-        alert("choose select please");
+        alert("Please choose the object to monitor");
     }
     else if(isVoltage ==false && isTemperature ==false && isCurrent ==false){
-        alert("please tick at least one check box");
+        alert("Plear to value to monitor of the object");
     }
     else if (cellInfor != "0") {
         var URL =setURLCellInfor(cellInfor, isVoltage, isTemperature, from_time, to_time);
