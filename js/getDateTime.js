@@ -1,6 +1,6 @@
 var myChart;
-const URL_CELL_INFOR = "http://171.249.238.83:8000/api/InforCell/id/"
-const URL_PACKAGE_INFOR = "http://171.249.238.83:8000/api/InforPackage/id/"
+const URL_CELL_INFOR = "http://115.74.22.232:8000/api/InforCell/id/"
+const URL_PACKAGE_INFOR = "http://115.74.22.232:8000/api/InforPackage/id/"
 function httpGet(theUrl)
 	{
 	    var xmlHttp = new XMLHttpRequest();
