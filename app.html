@@ -20,10 +20,10 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="./css/bootstrap.min.css">
     <!-- PC -->
-    <link rel="stylesheet" medida="(min-width:1024px and min_height:650px)" href="./css/app.css">
-    <!-- Mobile -->
-    <link rel="stylesheet" medida="(max-width:740px))" href="./css/mobile.css">
+    <link rel="stylesheet" href="./css/app.css">
+    <link rel="stylesheet" href="./css/queries.css">
     <link rel="stylesheet" href="./source/fontawesome-free-5.15.3-web/css/all.css">
+    
 
 </head>
 
@@ -31,7 +31,17 @@
     <!-- background -->
     <div class="main_background">
         <!-- header -->
-        <div class="header"></div>
+        <div class="header">
+            <div class="headerLogo">
+                <img src="./source/48376399_586335565150340_2882677402197032960_n.png" alt="logo" height="70px">
+            </div>
+            <div class="headerName">
+                <p>WEBSITE MONITOR BATTERY</p>
+            </div>
+            <div class="headerTittle">
+                <img src="./source/form.ico" alt="logo" height=70px">
+            </div>
+        </div>
         <!-- body -->
         <div class="body">
             <!-- body_menu -->
@@ -51,12 +61,6 @@
                 <button class="tablinks" onclick="changeTable(event, 'package')">Package</button>
                 <button class="tablinks" onclick="changeTable(event, 'peripheral')">Peripheral</button>
                 <button class="tablinks" onclick="changeTable(event, 'data')">Data</button>
-                <!-- Trợ giúp -->
-                <div class="main_body_menu_conduct">
-                    <i class="fas fa-question-circle"></i>
-                    <span> HELP</span>
-                </div>
-                <button class="tablinks" onclick="changeTable(event, 'conduct')">Conduct</button>
             </div>
             <!-- body-template -->
             <!-- topic -->
@@ -257,9 +261,11 @@
             <div id="data" class="tabcontent">
                 <div class="data_chart">
                     <div class="dataButton">
-                        <div class="selectButton">
-                            <label for="select_cell">Select Cell</label>
-                            <select id="select_cell" onchange="changingCellSelect()">
+                        <div class="cell">
+                            <div class="cellName">
+                                <label for="select_cell">Select Cell</label>
+                            </div>
+                            <div class="cellSelect"><select id="select_cell" onchange="changingCellSelect()">
                                 <option value="0">Select Cell:</option>
                                 <option value="1">Cell 1</option>
                                 <option value="2">Cell 2</option>
@@ -269,41 +275,70 @@
                                 <option value="6">Cell 6</option>
                                 <option value="7">Cell 7</option>
                                 <option value="8">Cell 8</option>
-                            </select>
-                            <label for="select_package">Select Package</label>
-                            <select id="select_package" onchange="changingPackageSelect()">
+                            </select></div>
+                        </div>
+                        <div class="package">
+                            <div class="packageName">
+                                <label for="select_package">Select Package</label>
+                            </div>
+                            <div class="packageSelect"><select id="select_package" onchange="changingPackageSelect()">
                                 <option value="0">Select package:</option>
                                 <option value="1">Package 1</option>
                                 <option value="2">Package 2</option>
                                 <option value="3">All Package</option>
-                            </select>
+                            </select></div>
                         </div>
-                        <div class="monitorData">
-                            <div class="monitoringDataName">
-                                <p>Moniter</p>
+                        <div class="monitor">
+                            <div class="monitoringName">
+                                    <p>Moniter</p>
                             </div>
-                            <div class="checkboxMonitor">
-                                <input type="checkbox" id="isVoltage" value="false">
-                                  <label for="isVoltage">Voltage </label><br>
-                                  <input type="checkbox" id="isTemperature" value="false">
+                            <div class="monitoringSelect">
+                                <div class="moniVoltage">
+                                    <input type="checkbox" id="isVoltage" value="false">
+                                  <label for="isVoltage"> Voltage</label><br>
+                                </div>
+                                <div class="moniTem">
+                                    <input type="checkbox" id="isTemperature" value="false">
                                   <label for="isTemperature"> Temperature</label><br>
-                                  <input type="checkbox" id="isCurrent" value="false">
+                                </div>
+                                <div class="moniCurrent">
+                                    <input type="checkbox" id="isCurrent" value="false">
                                   <label for="isCurrent"> Current</label><br>
+                                </div>
                             </div>
                         </div>
-                        <div class="selectime">
-                            <label for="date"> Select Date </label>
-                            <input type="date" id="date" name="dateMonitor">
-                            <label for="h_from"> From time </label>
-                            <input type="number" min="0" max="23" placeholder="23" id="h_from"> :
-                            <input type="number" min="0" max="59" placeholder="00" id="m_from">
-                            <label for="h_to"> To time </label>
-                            <input type="number" min="0" max="23" placeholder="23" id="h_to">  :
-                            <input type="number" min="0" max="59" placeholder="00" id="m_to">
+                        <div class="date">
+                            <div class="dateName">
+                                <label for="date"> Select Date </label>
+                            </div>
+                            <div class="dateSelect">
+                                <input type="date" id="date" name="dateMonitor">
+                            </div>
                         </div>
-                        <div class="submitbtn">
+                        <div class="fromtime">
+                            <div class="fromtimeName">
+                                <label for="h_from"> From time </label>
+                            </div>
+                            <div class="fromtimeSelect">
+                                <input type="number" min="0" max="23" placeholder="23" id="h_from"> :
+                                <input type="number" min="0" max="59" placeholder="00" id="m_from">
+                            </div>
+                        </div>
+                        <div class="totime">
+                            <div class="totimeName">
+                                <label for="h_to"> To time </label>
+                            </div>
+                            <div class="totimeSelect">
+                                <input type="number" min="0" max="23" placeholder="23" id="h_to">  :
+                            <input type="number" min="0" max="59" placeholder="00" id="m_to">
+                            </div>
+                        </div>
+                        <div class="submit">
+                            <div class="submitbtn">
                             <input type="submit" id="submit" onclick="getSubmid()">
                         </div>
+                    </div>
+                            
                     </div>
                     <div class="dataChart">
                         <canvas id="myChart"></canvas>
@@ -316,7 +351,17 @@
             </div>
 
         </div>
-        <div class="information"></div>
+        <div class="information">
+            <div class="infor1">
+                
+            </div>
+            <div class="infor2">
+                <p>Ho Chi Minh City University of Technology</p>
+                <p>Deparment: Control and Automation</p>
+                <p>Name:Hoang Viet Hung</p>
+                <p>ID: 1711626</p>
+            </div>
+        </div>
     </div>
 
     </div>
