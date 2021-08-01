@@ -32,18 +32,24 @@ html {
     height: 68.5%;
     width: 100%;
     display: flex;
+    
+    border: 3px solid #2E86C7;
 }
 
 /* body_menu */
 .main_body_menu {
     float: left;
-    width: 16%;
-    height: 100%;
+    width: 18%;
+    height: 90%;
+    margin-top: 29px;
+    margin-left: 20px;
     background-color: #fff;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0.05, 0.05);
-    border-radius: 5px;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.4), 0 6px 20px 0 rgba(0, 0, 0.01, 0.05);
+    border-radius: 10px;
+    border: 3px solid #2E86C7;
 }
 .headerLogo{
+    margin-left: 30px;
     width: 13.5%;
     height: 100%;
     padding: 10px 60px;
@@ -55,12 +61,13 @@ html {
     margin-left: 3.5%;
     font-family: 'Lato', sans-serif;
     font-weight: 800;
-    font-size: 30px;
+    font-size: 35px;
     color: #2E86C7;
-    word-spacing: 10px;
+    word-spacing: 15px;
+    text-align: center;
 }
 .headerTittle{
-    padding: 8px 10px;
+    padding: 20px 0px;
 }
 
 .tablinks {
@@ -74,7 +81,7 @@ html {
     text-align: left;
     cursor: pointer;
     transition: 0.3s;
-    font-size: 18px;
+    font-size: 25px;
 }
 
 .tablinks:hover {
@@ -92,10 +99,10 @@ html {
 /* menu */
 .main_body_menu_ui {
     margin-left: 15px;
-    margin-top: 2px;
+    margin-top: 15%;
     font-family: 'Lato', sans-serif;
-    font-weight: 600;
-    font-size: 25px;
+    font-weight: 700;
+    font-size: 30px;
     color: #2E86C7;
 }
 
@@ -256,9 +263,10 @@ th {
 }
 
 .funtion_body_package {
+    margin-top: 5%;
     margin-left: 1%;
     width: 95%;
-    height: 50%;
+    height: 38%;
     border: 3px solid #2E86C7;
     border-radius: 10px;
 }
@@ -271,6 +279,7 @@ th {
 }
 
 .funtion_body_peripheral {
+    margin-top: 2%;
     margin-left: 5%;
     width: 90%;
     height: 55%;
@@ -284,7 +293,8 @@ th {
     height: 19.5%;
     width: 100%;
     display: flex;
-    background-color: #2E86C7;
+    background-color:rgb(236, 236, 234);
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0.1, 0.1);
 }
 
 /* css for chart */
@@ -560,22 +570,38 @@ th {
     padding: 10px 10px;
 }
 .infor2{
-    margin-left: 3%;
-    width: 25%;
+    margin-left:6%;
+    width: 100%;
     height: 100%;
-    padding: 5px 2px;
+    padding: 15px 10px;
+    display: flex;
+}
+.infortext{  
     font-family: 'Lato', sans-serif;
     font-weight: 400px;
-    color:white;
-    font-size: 15px;
+    color:#2E86C7;
+    font-size: 18px;
+    font-weight: 800px;
+    margin-left: 2%;
 }
-.infor2 .p{
-    margin: 0%;
-}
-.infor3{
-    margin-left: 3%;
-    width: 25%;
+.inforLogo{
+    width: 12%;
     height: 100%;
-    background-color: burlywood;
-    padding: 5px 5px;
+    
+    padding: 5px 15px;
+}
+.inforLogo1{
+    width: 12%;
+    height: 100%;
+    
+    padding: 10px 50px;
+}
+.infortext1{
+    margin-bottom: 0rem;
+    font-weight: 600px;
+    word-spacing: 20px;
+}
+.infortext2 {
+    font-size: 15px;
+    word-spacing: 20px;
 }

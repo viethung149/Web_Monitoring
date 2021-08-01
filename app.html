@@ -23,7 +23,7 @@
     <link rel="stylesheet" href="./css/app.css">
     <link rel="stylesheet" href="./css/queries.css">
     <link rel="stylesheet" href="./source/fontawesome-free-5.15.3-web/css/all.css">
-    
+
 
 </head>
 
@@ -38,8 +38,8 @@
             <div class="headerName">
                 <p>WEBSITE MONITOR BATTERY</p>
             </div>
-            <div class="headerTittle">
-                <img src="./source/form.ico" alt="logo" height=70px">
+            <div class="inforLogo1">
+                <img src="./source/tdh.png" alt="inforLogo" height="70px" >
             </div>
         </div>
         <!-- body -->
@@ -47,20 +47,22 @@
             <!-- body_menu -->
             <div class="main_body_menu">
                 <!-- cGioi thieu -->
-                <div class="main_body_menu_au">
+                <!-- <div class="main_body_menu_au">
                     <i class="fas fa-book-open"></i>
                     <span> ABOUT</span>
                 </div>
-                <button class="tablinks" onclick="changeTable(event, 'topic')">Topic</button>
+                <button class="tablinks" onclick="changeTable(event, 'topic')">Topic</button> -->
                 <!-- Chức năng -->
+                
                 <div class="main_body_menu_ui">
                     <i class="fas fa-atom"></i>
                     <span> FUNCTION</span>
                 </div>
                 <button class="tablinks" onclick="changeTable(event, 'battery')" id="defaultOpen">Battery</button>
                 <button class="tablinks" onclick="changeTable(event, 'package')">Package</button>
-                <button class="tablinks" onclick="changeTable(event, 'peripheral')">Peripheral</button>
+                <button class="tablinks" onclick="changeTable(event, 'peripheral')">Relays</button>
                 <button class="tablinks" onclick="changeTable(event, 'data')">Data</button>
+                
             </div>
             <!-- body-template -->
             <!-- topic -->
@@ -174,9 +176,9 @@
                         <table>
                             <tr>
                                 <th>Name Package</th>
-                                <th>Capacity</th>
+                                <th>Voltage</th>
                                 <th>Temperature</th>
-                                <th>Curent</th>
+                                <th>Current</th>
                                 <!-- <th>Balance</th> -->
                                 <th>Connect</th>
                                 <th>Warning</th>
@@ -204,7 +206,7 @@
                                 <td id="pac2_time"></td>
 
                             </tr>
-                            <tr>
+                            <!-- <tr>
                                 <td>Package 3</td>
                                 <td id="pac3_capacity"></td>
                                 <td id="pac3_temperature"></td>
@@ -213,8 +215,7 @@
                                 <td id="pac3_connect"></td>
                                 <td id="pac3_warning"></td>
                                 <td id="pac3_time"></td>
-                            </tr>
-
+                            <!-- </tr> --> 
                         </table>
                     </div>
                 </div>
@@ -226,7 +227,7 @@
                     <div class="funtion_body_peripheral">
                         <table>
                             <tr>
-                                <th class="peripheral_th">Name Pheripheral</th>
+                                <th class="peripheral_th">Name Relay</th>
                                 <th class="peripheral_th">Status</th>
                                 <th>Time</th>
                             </tr>
@@ -266,44 +267,44 @@
                                 <label for="select_cell">Select Cell</label>
                             </div>
                             <div class="cellSelect"><select id="select_cell" onchange="changingCellSelect()">
-                                <option value="0">Select Cell:</option>
-                                <option value="1">Cell 1</option>
-                                <option value="2">Cell 2</option>
-                                <option value="3">Cell 3</option>
-                                <option value="4">Cell 4</option>
-                                <option value="5">Cell 5</option>
-                                <option value="6">Cell 6</option>
-                                <option value="7">Cell 7</option>
-                                <option value="8">Cell 8</option>
-                            </select></div>
+                                    <option value="0">Select Cell:</option>
+                                    <option value="1">Cell 1</option>
+                                    <option value="2">Cell 2</option>
+                                    <option value="3">Cell 3</option>
+                                    <option value="4">Cell 4</option>
+                                    <option value="5">Cell 5</option>
+                                    <option value="6">Cell 6</option>
+                                    <option value="7">Cell 7</option>
+                                    <option value="8">Cell 8</option>
+                                </select></div>
                         </div>
                         <div class="package">
                             <div class="packageName">
                                 <label for="select_package">Select Package</label>
                             </div>
                             <div class="packageSelect"><select id="select_package" onchange="changingPackageSelect()">
-                                <option value="0">Select package:</option>
-                                <option value="1">Package 1</option>
-                                <option value="2">Package 2</option>
-                                <option value="3">All Package</option>
-                            </select></div>
+                                    <option value="0">Select package:</option>
+                                    <option value="1">Package 1</option>
+                                    <option value="2">Package 2</option>
+                                    <option value="3">All Package</option>
+                                </select></div>
                         </div>
                         <div class="monitor">
                             <div class="monitoringName">
-                                    <p>Moniter</p>
+                                <p>Moniter</p>
                             </div>
                             <div class="monitoringSelect">
                                 <div class="moniVoltage">
                                     <input type="checkbox" id="isVoltage" value="false">
-                                  <label for="isVoltage"> Voltage</label><br>
+                                      <label for="isVoltage"> Voltage</label><br>
                                 </div>
                                 <div class="moniTem">
                                     <input type="checkbox" id="isTemperature" value="false">
-                                  <label for="isTemperature"> Temperature</label><br>
+                                      <label for="isTemperature"> Temperature</label><br>
                                 </div>
                                 <div class="moniCurrent">
                                     <input type="checkbox" id="isCurrent" value="false">
-                                  <label for="isCurrent"> Current</label><br>
+                                      <label for="isCurrent"> Current</label><br>
                                 </div>
                             </div>
                         </div>
@@ -329,16 +330,16 @@
                                 <label for="h_to"> To time </label>
                             </div>
                             <div class="totimeSelect">
-                                <input type="number" min="0" max="23" placeholder="23" id="h_to">  :
-                            <input type="number" min="0" max="59" placeholder="00" id="m_to">
+                                <input type="number" min="0" max="23" placeholder="23" id="h_to"> :
+                                <input type="number" min="0" max="59" placeholder="00" id="m_to">
                             </div>
                         </div>
                         <div class="submit">
                             <div class="submitbtn">
-                            <input type="submit" id="submit" onclick="getSubmid()">
+                                <input type="submit" id="submit" onclick="getSubmid()">
+                            </div>
                         </div>
-                    </div>
-                            
+
                     </div>
                     <div class="dataChart">
                         <canvas id="myChart"></canvas>
@@ -352,14 +353,21 @@
 
         </div>
         <div class="information">
-            <div class="infor1">
-                
-            </div>
+            <div class="infor1"></div>
             <div class="infor2">
-                <p>Ho Chi Minh City University of Technology</p>
-                <p>Deparment: Control and Automation</p>
-                <p>Name:Hoang Viet Hung</p>
-                <p>ID: 1711626</p>
+                <div class="inforLogo">
+                    <img src="./source/tdh.png" alt="inforLogo" height="110px" >
+                </div>
+                <div class="infortext">
+                    <h4 id="infortext1">DEPARTMENT OF CONTROL ENGINEERING & AUTOMATION</h4>
+                    <h6><i class="fas fa-user-alt"></i>
+                    <span>Hoang Viet Hung</span></h6>
+                    <h6 id="infortext2"><i class="fas fa-envelope"></i>
+                    <span>hung.hoang.viet@hcmut.edu.vn</span></h6>
+                    <h6 id="infortext2"><i class="fas fa-phone-alt"></i>
+                    <span>0964 029 461</span></h6>
+                </div>
+
             </div>
         </div>
     </div>
