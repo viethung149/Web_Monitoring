@@ -7,9 +7,9 @@ const URL_temperature = "https://monitoringbattery-5496a-default-rtdb.asia-south
 const URL_current  = "https://monitoringbattery-5496a-default-rtdb.asia-southeast1.firebasedatabase.app/current_packages.json"
 const URL_warning_voltage = "https://monitoringbattery-5496a-default-rtdb.asia-southeast1.firebasedatabase.app/warning_voltage_cells.json"
 const URL_warning_temperature = "https://monitoringbattery-5496a-default-rtdb.asia-southeast1.firebasedatabase.app/warning_temperature_cells.json"
-const URL_database_cell_infor ="http://116.102.225.66:8000/api/getTableCellInfo"
-const URL_database_package_infor ="http://116.102.225.66:8000/api/getTablePackageInfo"
-const URL_database_peripheral_infor ="http://116.102.225.66:8000/api/getTablePeripheral"
+const URL_database_cell_infor ="http://192.168.1.3:8000/api/getTableCellInfo"
+const URL_database_package_infor ="http://192.168.1.3:8000/api/getTablePackageInfo"
+const URL_database_peripheral_infor ="http://192.168.1.3:8000/api/getTablePeripheral"
 const RELAY1_PACKAGE1 =0
 const RELAY2_PACKAGE2=1
 const RELAY3_FAN1 =2
@@ -58,58 +58,58 @@ function render_battery_infor(){
 	document.getElementById("Bat_1_vol").innerHTML = cell_column_voltage[0].toFixed(3)
 	document.getElementById("Bat_1_tem").innerHTML = cell_column_temperature[0].toFixed(3)
 	// document.getElementById("Bat_1_bla").innerHTML = cell_column_Balance[0]
-	document.getElementById("Bat_1_wvol").innerHTML = cell_column_warning_voltage[0] =="true"?"Emergency":"Normal";
-	document.getElementById("Bat_1_wtem").innerHTML = cell_column_warning_temperature[0]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_1_wvol").innerHTML = cell_column_warning_voltage[0] ==true?"Emergency":"Normal";
+	document.getElementById("Bat_1_wtem").innerHTML = cell_column_warning_temperature[0]==true?"Emergency":"Normal";
 	document.getElementById("Bat_1_time").innerHTML = cell_column_time
     
 	document.getElementById("Bat_2_vol").innerHTML = cell_column_voltage[1].toFixed(3)
 	document.getElementById("Bat_2_tem").innerHTML = cell_column_temperature[1].toFixed(3)
 	// document.getElementById("Bat_2_bla").innerHTML = cell_column_Balance[1]
-	document.getElementById("Bat_2_wvol").innerHTML = cell_column_warning_voltage[1]=="true"?"Emergency":"Normal";
-	document.getElementById("Bat_2_wtem").innerHTML = cell_column_warning_temperature[1]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_2_wvol").innerHTML = cell_column_warning_voltage[1]==true?"Emergency":"Normal";
+	document.getElementById("Bat_2_wtem").innerHTML = cell_column_warning_temperature[1]==true?"Emergency":"Normal";
 	document.getElementById("Bat_2_time").innerHTML = cell_column_time
 
 
 	document.getElementById("Bat_3_vol").innerHTML = cell_column_voltage[2].toFixed(3)
 	document.getElementById("Bat_3_tem").innerHTML = cell_column_temperature[2].toFixed(3)
 	// document.getElementById("Bat_3_bla").innerHTML = cell_column_Balance[2]
-	document.getElementById("Bat_3_wvol").innerHTML = cell_column_warning_voltage[2]=="true"?"Emergency":"Normal";
-	document.getElementById("Bat_3_wtem").innerHTML = cell_column_warning_temperature[2]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_3_wvol").innerHTML = cell_column_warning_voltage[2]==true?"Emergency":"Normal";
+	document.getElementById("Bat_3_wtem").innerHTML = cell_column_warning_temperature[2]==true?"Emergency":"Normal";
 	document.getElementById("Bat_3_time").innerHTML = cell_column_time
 
 	document.getElementById("Bat_4_vol").innerHTML = cell_column_voltage[3].toFixed(3)
 	document.getElementById("Bat_4_tem").innerHTML = cell_column_temperature[3].toFixed(3)
 	// document.getElementById("Bat_4_bla").innerHTML = cell_column_Balance[3]
-	document.getElementById("Bat_4_wvol").innerHTML = cell_column_warning_voltage[3]=="true"?"Emergency":"Normal";
-	document.getElementById("Bat_4_wtem").innerHTML = cell_column_warning_temperature[3]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_4_wvol").innerHTML = cell_column_warning_voltage[3]==true?"Emergency":"Normal";
+	document.getElementById("Bat_4_wtem").innerHTML = cell_column_warning_temperature[3]==true?"Emergency":"Normal";
 	document.getElementById("Bat_4_time").innerHTML = cell_column_time
 
 	document.getElementById("Bat_5_vol").innerHTML = cell_column_voltage[4].toFixed(3)
 	document.getElementById("Bat_5_tem").innerHTML = cell_column_temperature[4].toFixed(3)
 	// document.getElementById("Bat_5_bla").innerHTML = cell_column_Balance[4]
-	document.getElementById("Bat_5_wvol").innerHTML = cell_column_warning_voltage[4]=="true"?"Emergency":"Normal";
-	document.getElementById("Bat_5_wtem").innerHTML = cell_column_warning_temperature[4]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_5_wvol").innerHTML = cell_column_warning_voltage[4]==true?"Emergency":"Normal";
+	document.getElementById("Bat_5_wtem").innerHTML = cell_column_warning_temperature[4]==true?"Emergency":"Normal";
 	document.getElementById("Bat_5_time").innerHTML = cell_column_time
 
 	document.getElementById("Bat_6_vol").innerHTML = cell_column_voltage[5].toFixed(3)
 	document.getElementById("Bat_6_tem").innerHTML = cell_column_temperature[5].toFixed(3)
 	// document.getElementById("Bat_6_bla").innerHTML = cell_column_Balance[5]
-	document.getElementById("Bat_6_wvol").innerHTML = cell_column_warning_voltage[5]=="true"?"Emergency":"Normal";
-	document.getElementById("Bat_6_wtem").innerHTML = cell_column_warning_temperature[5]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_6_wvol").innerHTML = cell_column_warning_voltage[5]==true?"Emergency":"Normal";
+	document.getElementById("Bat_6_wtem").innerHTML = cell_column_warning_temperature[5]==true?"Emergency":"Normal";
 	document.getElementById("Bat_6_time").innerHTML = cell_column_time
 
 	document.getElementById("Bat_7_vol").innerHTML = cell_column_voltage[6].toFixed(3)
 	document.getElementById("Bat_7_tem").innerHTML = cell_column_temperature[6].toFixed(3)
 	// document.getElementById("Bat_7_bla").innerHTML = cell_column_Balance[6]
-	document.getElementById("Bat_7_wvol").innerHTML = cell_column_warning_voltage[6]=="true"?"Emergency":"Normal";
-	document.getElementById("Bat_7_wtem").innerHTML = cell_column_warning_temperature[6]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_7_wvol").innerHTML = cell_column_warning_voltage[6]==true?"Emergency":"Normal";
+	document.getElementById("Bat_7_wtem").innerHTML = cell_column_warning_temperature[6]==true?"Emergency":"Normal";
 	document.getElementById("Bat_7_time").innerHTML = cell_column_time
 
 	document.getElementById("Bat_8_vol").innerHTML = cell_column_voltage[7].toFixed(3)
 	document.getElementById("Bat_8_tem").innerHTML = cell_column_temperature[7].toFixed(3)
 	// document.getElementById("Bat_8_bla").innerHTML = cell_column_Balance[7]
-	document.getElementById("Bat_8_wvol").innerHTML = cell_column_warning_voltage[7]=="true"?"Emergency":"Normal";
-	document.getElementById("Bat_8_wtem").innerHTML = cell_column_warning_temperature[7]=="true"?"Emergency":"Normal";
+	document.getElementById("Bat_8_wvol").innerHTML = cell_column_warning_voltage[7]==true?"Emergency":"Normal";
+	document.getElementById("Bat_8_wtem").innerHTML = cell_column_warning_temperature[7]==true?"Emergency":"Normal";
 	document.getElementById("Bat_8_time").innerHTML = cell_column_time
 
 }
@@ -120,7 +120,7 @@ function render_packages_infor(){
 	document.getElementById("pac1_curent").innerHTML =  package_column_current[0].toFixed(3)
 	// document.getElementById("pac1_balance").innerHTML = package_column_warning[0]
 	document.getElementById("pac1_connect").innerHTML = package_column_connection[0]
-	document.getElementById("pac1_warning").innerHTML = package_column_warning[0]=="true"?"Emergency":"Normal";
+	document.getElementById("pac1_warning").innerHTML = package_column_warning[0]==true?"Emergency":"Normal";
 	document.getElementById("pac1_time").innerHTML = package_time
 
 	document.getElementById("pac2_capacity").innerHTML = package_column_voltage[1].toFixed(3)
@@ -128,7 +128,7 @@ function render_packages_infor(){
 	document.getElementById("pac2_curent").innerHTML =  package_column_current[1].toFixed(3)
 	// document.getElementById("pac2_balance").innerHTML = package_column_warning[1]
 	document.getElementById("pac2_connect").innerHTML = package_column_connection[1]
-	document.getElementById("pac2_warning").innerHTML = package_column_warning[1]=="true"?"Emergency":"Normal";
+	document.getElementById("pac2_warning").innerHTML = package_column_warning[1]==true?"Emergency":"Normal";
 	document.getElementById("pac2_time").innerHTML = package_time
 
 	// document.getElementById("pac3_capacity").innerHTML = package_column_voltage[2].toFixed(3)
